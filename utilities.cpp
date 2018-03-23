@@ -38,7 +38,7 @@ bool is_okay(){
 	
 }
 
-void testPacketRelations(){
+/* void testPacketRelations(){
 	std::vector<char> payload;
 	Packet p1(payload, 1, 0, 0, 0);
 	Packet p2(payload, 2, 0, 0, 0);
@@ -54,15 +54,15 @@ void testPacketRelations(){
 	assert(p2 >= p1);
 	assert(p4 == p4);	
 	std::cerr << "Packet relational operators passed tests.\n";
-}
+} */
 
 /*==========================================================================*/
 //	functions used by both client and server
 /*==========================================================================*/
 void valid_portnum(const char* portnum){
 	int temp_portnum = atoi(portnum);
-	if(portnum < MIN_PORTNO || portnum > MAX_PORTNO){
-		fprintf(stderr, "May not use port number: %d\n", portnum);
+	if(temp_portnum < MIN_PORTNO || temp_portnum > MAX_PORTNO){
+		fprintf(stderr, "May not use port number: %d\n", temp_portnum);
 		exit(1);
 	}
 }
