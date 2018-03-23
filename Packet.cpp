@@ -21,6 +21,6 @@ Packet::Packet(uint16_t seqnum, uint16_t WND, uint8_t flag,
 {}
 
 Packet::~Packet(){
-	if (payload != NULL)
-		delete[] payload;
+	if (m_payload != NULL)
+		delete[] m_payload;
 }
