@@ -6,7 +6,7 @@
 #include "utilities.h"
 #include <cerrno>
 #include <cstdio> /* fprintf, perror, ssize_t */
-#include <cstring> /* strlen */
+#include <cstring> /* strlen, memset */
 #include <iostream>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -30,6 +30,7 @@ int main( int argc, char *argv[] ){
 	int sockfd, rv, numbytes;
 	struct addrinfo hints, *servinfo, *p;
 
+	memset(&hints, 0, sizeof hints);
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_DGRAM;
 

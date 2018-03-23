@@ -6,6 +6,7 @@
 #include "utilities.h"
 #include <cerrno>
 #include <cstdio> /* fprintf, perror, ssize_t */
+#include <cstring> /* memset */
 #include <iostream>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -43,6 +44,7 @@ int main( int argc, char *argv[] ){
     socklen_t addr_len;
     char s[INET6_ADDRSTRLEN];
 
+	memset(&hints, 0, sizeof hints);
     hints.ai_family = AF_UNSPEC; // set to AF_INET to force IPv4
     hints.ai_socktype = SOCK_DGRAM;
     hints.ai_flags = AI_PASSIVE; // use my IP
