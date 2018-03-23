@@ -6,13 +6,14 @@
 #include "utilities.h"
 #include <cerrno>
 #include <cstdio> /* fprintf, perror */
-#include <cstdlib> /* atoi, etc */
+#include <cstdlib> /* atoi */
 #include <iostream>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <netdb.h> /* gai_strerror, etc */
+#include <netdb.h> /* gai_strerror */
+#include <unistd.h> /* close */
 
 // get sockaddr, IPv4 or IPv6:
 void* get_in_addr(struct sockaddr *sa){
@@ -42,7 +43,6 @@ int main( int argc, char *argv[] ){
     socklen_t addr_len;
     char s[INET6_ADDRSTRLEN];
 
-    memset(&hints, 0, sizeof hints);
     hints.ai_family = AF_UNSPEC; // set to AF_INET to force IPv4
     hints.ai_socktype = SOCK_DGRAM;
     hints.ai_flags = AI_PASSIVE; // use my IP

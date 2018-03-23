@@ -13,9 +13,9 @@ Description:
 #include "Packet.h"
 #include "utilities.h"
 #include <cassert>
-#include <cstdlib> /* srand */
+#include <cstdlib> /* srand, ssize_t */
 #include <iostream>
-#include <time.h> /* timespec, etc */
+#include <time.h> /* timespec */
 #include <vector>
 
 

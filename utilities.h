@@ -4,7 +4,7 @@
 #define UTILITIES_H
 
 #include "globals.h"
-
+#include <cstdio> /* ssize_t, etc */
 
 bool is_okay();
 void testPacketRelations();

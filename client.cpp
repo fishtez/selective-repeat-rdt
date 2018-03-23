@@ -6,31 +6,31 @@
 #include "utilities.h"
 #include <cerrno>
 #include <cstdio> /* fprintf, perror */
-#include <cstdlib> /* atoi, etc */
+#include <cstdlib> /* atoi */
+#include <cstring> /* strlen */
 #include <iostream>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h> /* gai_strerror, etc */
+#include <unistd.h> /* close */
 
 int main( int argc, char *argv[] ){
     if (argc < 4) {
         std::cerr << "Required arguments: hostname, server port number, name of requested file.\n";
         exit(1);
     }
-    hostname = argv[1];
-    portnum = argv[2];
-    filename = argv[3];
+    char* hostname = argv[1];
+    char* portnum = atoi(argv[2]);
+    char* filename = argv[3];
 	// prints message and exits if out of range.
 	valid_portnum(portnum);
 
 	// set up socket
+	int sockfd, rv, numbytes;
 	struct addrinfo hints, *servinfo, *p;
-    int rv;
-    int numbytes;
 
-    memset(&hints, 0, sizeof hints);
     hints.ai_family = AF_UNSPEC;
     hints.ai_socktype = SOCK_DGRAM;
 
