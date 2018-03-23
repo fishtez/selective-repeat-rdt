@@ -9,7 +9,7 @@ Precondition(dependencies):
 Postcondition(guarantees upon return):
 Description: 
 ****************************************************************************/
-
+#include "globals.h"
 #include "Packet.h"
 #include <cstdint> /* uint16_t */
 #include <time.h> /* timespec, etc */
