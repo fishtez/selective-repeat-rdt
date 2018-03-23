@@ -12,11 +12,13 @@ default: clean client server
 	
 # executable
 client: client.o Packet.o utilities.o
-	$(CXX) $(CXXFLAGS) -o client client.o SR_protocol_client.o Packet.o utilities.o $(LDFLAGS)
+#	$(CXX) $(CXXFLAGS) -o client client.o SR_protocol_client.o Packet.o utilities.o $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -o client client.o Packet.o utilities.o $(LDFLAGS)
 
 # executable
 server: server.o Packet.o utilities.o
-	$(CXX) $(CXXFLAGS) -o server server.o SR_protocol_server.o Packet.o utilities.o $(LDFLAGS) 
+#	$(CXX) $(CXXFLAGS) -o server server.o SR_protocol_server.o Packet.o utilities.o $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -o server server.o Packet.o utilities.o $(LDFLAGS)
 
 # objects
 client.o: client.cpp utilities.h  Packet.h globals.h
