@@ -1,8 +1,8 @@
 // server.cpp
 /* based upon https://beej.us/guide/bgnet/ */
 #include "globals.h"
-//#include "Packet.h"
-//#include "SR_protocol.h"
+#include "Packet.h"
+#include "SR_protocol.h"
 #include "utilities.h"
 #include <cerrno>
 #include <cstdio> /* fprintf, perror, ssize_t */
