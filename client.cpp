@@ -5,8 +5,7 @@
 //#include "SR_protocol.h"
 #include "utilities.h"
 #include <cerrno>
-#include <cstdio> /* fprintf, perror */
-#include <cstdlib> /* atoi */
+#include <cstdio> /* fprintf, perror, ssize_t */
 #include <cstring> /* strlen */
 #include <iostream>
 #include <sys/types.h>
@@ -22,7 +21,7 @@ int main( int argc, char *argv[] ){
         exit(1);
     }
     char* hostname = argv[1];
-    int portnum = atoi(argv[2]);
+    char* portnum = argv[2];
     char* filename = argv[3];
 	// prints message and exits if out of range.
 	valid_portnum(portnum);

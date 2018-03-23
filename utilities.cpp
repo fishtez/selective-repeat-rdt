@@ -13,12 +13,10 @@ Description:
 #include "Packet.h"
 #include "utilities.h"
 #include <cassert>
-#include <cstdlib> /* srand, ssize_t */
+#include <cstdlib> /* atoi, srand, ssize_t */
 #include <iostream>
 #include <time.h> /* timespec */
 #include <vector>
-
-
 
 long timeDiff(struct timespec *start_time, struct timespec *end_time){
 	
@@ -61,7 +59,8 @@ void testPacketRelations(){
 /*==========================================================================*/
 //	functions used by both client and server
 /*==========================================================================*/
-void valid_portnum(int portnum){
+void valid_portnum(const char* portnum){
+	int temp_portnum = atoi(portnum);
 	if(portnum < MIN_PORTNO || portnum > MAX_PORTNO){
 		fprintf(stderr, "May not use port number: %d\n", portnum);
 		exit(1);

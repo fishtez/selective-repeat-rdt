@@ -5,8 +5,7 @@
 //#include "SR_protocol.h"
 #include "utilities.h"
 #include <cerrno>
-#include <cstdio> /* fprintf, perror */
-#include <cstdlib> /* atoi */
+#include <cstdio> /* fprintf, perror, ssize_t */
 #include <iostream>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -31,7 +30,7 @@ int main( int argc, char *argv[] ){
 		std::cerr << "Required argument: port number.\n";
         exit(1);
     
-	int portnum = argv[1];
+	char* portnum = argv[1];
 	// prints message and exits if out of range.
 	valid_portnum(portnum);
     
