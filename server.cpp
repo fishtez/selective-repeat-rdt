@@ -29,6 +29,7 @@ int main( int argc, char *argv[] ){
 	if (argc < 2) {
 		std::cerr << "Required argument: port number.\n";
         exit(1);
+	}
     
 	char* portnum = argv[1];
 	// prints message and exits if out of range.
