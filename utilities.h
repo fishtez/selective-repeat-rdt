@@ -9,7 +9,7 @@
 bool is_okay();
 void testPacketRelations();
 long timeDiff(struct timespec *start_time, struct timespec *end_time);
-void valid_portnum(ssize_t portnum);
+void valid_portnum(int portnum);
 
 
 #endif // !UTILITIES_H

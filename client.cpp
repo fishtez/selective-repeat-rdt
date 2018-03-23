@@ -22,7 +22,7 @@ int main( int argc, char *argv[] ){
         exit(1);
     }
     char* hostname = argv[1];
-    char* portnum = atoi(argv[2]);
+    int portnum = atoi(argv[2]);
     char* filename = argv[3];
 	// prints message and exits if out of range.
 	valid_portnum(portnum);

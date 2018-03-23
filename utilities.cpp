@@ -61,7 +61,7 @@ void testPacketRelations(){
 /*==========================================================================*/
 //	functions used by both client and server
 /*==========================================================================*/
-void valid_portnum(ssize_t portnum){
+void valid_portnum(int portnum){
 	if(portnum < MIN_PORTNO || portnum > MAX_PORTNO){
 		fprintf(stderr, "May not use port number: %d\n", portnum);
 		exit(1);
