@@ -39,7 +39,7 @@ public:
 	virtual bool send_data()=0;
 	virtual bool receive_data()=0;
 	virtual void report_packet_sent(uint16_t seq_num, uint16_t WND,
-																	bool is_retransmit, uint8_t flagBit)=0;
+		bool is_retransmit, uint8_t flagBit)=0;
 	virtual bool finish()=0;
 
 	/* general do stuff functions ******************* */
