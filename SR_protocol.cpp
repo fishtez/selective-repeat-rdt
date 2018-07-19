@@ -2,12 +2,12 @@
 
 // template for function descriptions
 /****************************************************************************
-Name: 
-Arguments: 
-Returns: 
+Name:
+Arguments:
+Returns:
 Precondition(dependencies):
 Postcondition(guarantees upon return):
-Description: 
+Description:
 ****************************************************************************/
 #include "globals.h"
 #include "Packet.h"
@@ -44,43 +44,42 @@ bool SR_protocol::set_rcv_base(uint16_t new_base){
 // CURRENTLY INCREASES BY 1, NOT BY INCR_SIZE
 /* // This increments and returns it, to save an extra get call.
 uint16_t SR_protocol::incr_rcv_base(){
-	
+
 	uint16_t temp_rcv_base = m_rcv_base++;
-	
+
 	// bounds check
 	// TODO >= ?
 	if(temp_rcv_base > MAX_SEQ)
 		temp_rcv_base = INITIAL_SEQ_NUM;
-	
+
 	return temp_rcv_base;
 }
 
 // CURRENTLY INCREASES BY 1, NOT BY INCR_SIZE
 // This increments and returns it, to save an extra get call.
 uint16_t SR_protocol::incr_send_base(){
-	
+
 	uint16_t temp_send_base = m_send_base++;
-	
+
 	// bounds check
 	// TODO >= ?
 	if(temp_send_base > MAX_SEQ)
 		temp_send_base = INITIAL_SEQ_NUM;
-	
+
 	return temp_send_base;
 } */
 
 // currently does NOT create new map when resets num
 uint16_t SR_protocol::incr_seq_num(uint16_t old_seq_num, uint16_t incr_size){
-	
 	uint16_t temp_seq = old_seq_num + incrSize;
-	
+
 	// TODO need to increment vector of maps?
 	// bounds check
 	if(temp_seq > MAX_SEQ){
 		uint16_t diff = temp_seq - MAX_SEQ;
 		temp_seq = INITIAL_SEQ_NUM + diff;
 	}
-	
+
 	return temp_seq;
 }
 

@@ -2,12 +2,12 @@
 
 // template for function descriptions
 /****************************************************************************
-Name: 
-Arguments: 
-Returns: 
+Name:
+Arguments:
+Returns:
 Precondition(dependencies):
 Postcondition(guarantees upon return):
-Description: 
+Description:
 ****************************************************************************/
 #include "globals.h"
 #include "Packet.h"
@@ -19,23 +19,22 @@ Description:
 #include <vector>
 
 long timeDiff(struct timespec *start_time, struct timespec *end_time){
-	
 	long ns, ms;
 	ns = end_time->tv_nsec - start_time->tv_nsec;
-	ms =  ns/1000000.0; //convert nanoseconds to milliseconds	
-	
+	ms =  ns/1000000.0; //convert nanoseconds to milliseconds
+
 	return ms;
 }
 
 bool is_okay(){
 	srand(time(NULL));
-	
+
 	int chance = rand() % 10 + 1;
 	if (chance <= 4)
 		return false;
 	else
 		return true;
-	
+
 }
 
 /* void testPacketRelations(){
@@ -44,7 +43,7 @@ bool is_okay(){
 	Packet p2(payload, 2, 0, 0, 0);
 	Packet p3(payload, 3, 0, 0, 0);
 	Packet p4(payload, 1, 0, 0, 0);
-	
+
 	assert(p3 > p1);
 	assert(p3 != p1);
 	assert(p4 == p1);
@@ -52,7 +51,7 @@ bool is_okay(){
 	assert(p4 <= p1);
 	assert(p1 < p2);
 	assert(p2 >= p1);
-	assert(p4 == p4);	
+	assert(p4 == p4);
 	std::cerr << "Packet relational operators passed tests.\n";
 } */
 
@@ -75,8 +74,3 @@ void valid_portnum(const char* portnum){
 /*==========================================================================*/
 //	functions used by server ONLY
 /*==========================================================================*/
-
-
-
-
-
